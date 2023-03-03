@@ -20,15 +20,19 @@ def generate_primes(max_val):
     """
     Returns complete list of prime values less than or equal to max_val
     """
+    primes_sqrt = [2]
     primes = [2]
+    sqrt_val = math.sqrt(max_val)
     i = 3
     while i <= max_val:
         prime = True
-        for p in primes:
+        for p in primes_sqrt:
             if i % p == 0:
                 prime = False
                 break
         if prime:
+            if i < sqrt_val:
+                primes_sqrt.append(i)
             primes.append(i)
         i += 2
     return primes
@@ -72,23 +76,44 @@ def get_replacements(x, digits_binary):
     return replacements
 
 
+def is_prime(x, primes):
+    """
+    Checks whether x is divisible by any value in primes.
+    """
+    for p in primes:
+        if p >= x:
+            return True
+        if x % p == 0:
+            return False
+    return True
+
+
 def problem_51():
     magic_number = 8
-    p_1_000_000 = generate_primes(1_000_000)
-    for p in p_1_000_000:
-        if p < 200_000:
-            continue
+    p_10_000_000 = generate_primes(1_000_000)
+    p_4000 = generate_primes(1000)
+    print("generated primes")
+    for p in p_10_000_000:
         for i in range(1, 2 ** digits(p) - 1):
             replacements = get_replacements(p, i)
             count = 0
+            if p not in replacements:
+                continue
             for r in replacements:
-                if r not in p_1_000_000:
+                if digits(r) < digits(p):
+                    count += 1
+                    continue
+                if not is_prime(r, p_4000):
                     count += 1
                     if count > 10 - magic_number:
                         break
             if count <= 10 - magic_number:
-                print(p, i, replacements)
-
+                primes = []
+                for r in replacements:
+                    if is_prime(r, p_4000):
+                        primes.append(r)
+                print(p, primes)
+                return
 
 
 if __name__ == "__main__":
