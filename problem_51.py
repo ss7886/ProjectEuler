@@ -13,6 +13,8 @@ https://projecteuler.net/problem=51
 
 Solution by Sam Sanft
 """
+
+
 import math
 
 
