@@ -13,6 +13,7 @@ https://projecteuler.net/problem=51
 
 Solution by Sam Sanft
 """
+import math
 
 
 def generate_primes(max_val):
@@ -44,10 +45,50 @@ def digits(x):
     return i
 
 
+def get_replacements(x, digits_binary):
+    """
+    Returns a list of the number x with specified digits replaced by values 0-9.
+    """
+    replace_digits = []
+    for i in range(digits(x)):
+        replace_digits.append(digits_binary & (2 ** i))
+
+    values = []
+    for i in range(len(replace_digits)):
+        values.append(int(x % (10 ** (i + 1)) / (10 ** i)) * (10 ** i))
+
+    assert sum(values) == x
+
+    replacements = []
+    for d in range(10):
+        r = x
+        for i in range(len(replace_digits)):
+            if not replace_digits[i]:
+                continue
+
+            r = r - values[i] + d * (10 ** i)
+        replacements.append(r)
+
+    return replacements
+
+
 def problem_51():
-    p_100_000 = generate_primes(100_000)
-    for p in p_100_000:
-        pass
+    magic_number = 8
+    p_1_000_000 = generate_primes(1_000_000)
+    for p in p_1_000_000:
+        if p < 200_000:
+            continue
+        for i in range(1, 2 ** digits(p) - 1):
+            replacements = get_replacements(p, i)
+            count = 0
+            for r in replacements:
+                if r not in p_1_000_000:
+                    count += 1
+                    if count > 10 - magic_number:
+                        break
+            if count <= 10 - magic_number:
+                print(p, i, replacements)
+
 
 
 if __name__ == "__main__":
