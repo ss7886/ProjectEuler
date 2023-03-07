@@ -1,12 +1,14 @@
 """
-The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
 
-(See problem_8.txt)
+a^2 + b^2 = c^2
 
-Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this
-product?
+For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
 
-https://projecteuler.net/problem=8
+There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+Find the product abc.
+
+https://projecteuler.net/problem=9
 
 Solution by Sam Sanft
 """
