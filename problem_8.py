@@ -31,6 +31,5 @@ def problem_8():
     print(champ)
 
 
-
 if __name__ == "__main__":
     problem_8()
