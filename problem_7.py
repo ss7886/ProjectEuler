@@ -10,26 +10,29 @@ Solution by Sam Sanft
 import math
 
 
-def generate_primes(num):
+def generate_prime(n):
+    """
+    Returns the nth prime.
+    """
     primes = [2]
     x = 3
-    while len(primes) < num:
+    while len(primes) < n:
         root = math.sqrt(x)
-        isPrime = True
+        is_prime = True
         for p in primes:
             if p > root:
                 break
             if x % p == 0:
-                isPrime = False
+                is_prime = False
                 break
-        if isPrime:
+        if is_prime:
             primes.append(x)
         x += 2
     return primes[-1]
 
 
 def problem_7():
-    x = generate_primes(10_001)
+    x = generate_prime(10_001)
     print(x)
 
 
