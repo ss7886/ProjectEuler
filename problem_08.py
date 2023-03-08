@@ -13,7 +13,7 @@ Solution by Sam Sanft
 
 
 def problem_8():
-    f = open("problem_8.txt")
+    f = open("problem_08.txt")
     num_str = ""
     for line in f:
         num_str += line[:-1]

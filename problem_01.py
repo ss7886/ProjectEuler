@@ -22,5 +22,6 @@ def problem_1():
         count -= i
     print(count)
 
+
 if __name__ == "__main__":
     problem_1()

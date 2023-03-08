@@ -18,7 +18,7 @@ def problem_6():
     squared_sum = int((cap + 1) * (cap / 2))
     squared_sum *= squared_sum
     sum_squares = 0
-    for i in range(1, 101):
+    for i in range(1, cap + 1):
         sum_squares += i * i
     print(squared_sum - sum_squares)
 
