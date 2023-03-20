@@ -39,7 +39,7 @@ def num_letters(x):
     return num
 
 
-def problem_16():
+def problem_17():
     max_val = 1000
     val = 0
     for i in range(max_val):
@@ -50,4 +50,4 @@ def problem_16():
 
 
 if __name__ == "__main__":
-    problem_16()
+    problem_17()
