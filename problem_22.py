@@ -35,7 +35,5 @@ def problem_22():
     print(score)
 
 
-
-
 if __name__ == "__main__":
     problem_22()
