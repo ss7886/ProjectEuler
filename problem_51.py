@@ -16,6 +16,7 @@ Solution by Sam Sanft
 
 
 import math
+import time
 
 
 def generate_primes(max_val):
@@ -94,7 +95,6 @@ def problem_51():
     magic_number = 8
     p_10_000_000 = generate_primes(1_000_000)
     p_4000 = generate_primes(1000)
-    print("generated primes")
     for p in p_10_000_000:
         for i in range(1, 2 ** digits(p) - 1):
             replacements = get_replacements(p, i)
@@ -114,9 +114,11 @@ def problem_51():
                 for r in replacements:
                     if is_prime(r, p_4000):
                         primes.append(r)
-                print(p, primes)
+                print(p)
                 return
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     problem_51()
+    print(f"Time: {time.time() - start_time}s")
