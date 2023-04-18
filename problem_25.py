@@ -29,10 +29,7 @@ import time
 
 
 def num_digits(x):
-    """
-    Returns number of digits of a integer x.
-    """
-    return len(str(x))
+    return int(math.log10(x)) + 1
 
 
 def problem_24():
@@ -40,7 +37,7 @@ def problem_24():
     b = 1
     i = 2
     max_len = 1_000
-    while (num_digits(b) < max_len):
+    while num_digits(b) < max_len:
         b = a + b
         a = b - a
         i += 1
