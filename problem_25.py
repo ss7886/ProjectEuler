@@ -32,7 +32,7 @@ def num_digits(x):
     return int(math.log10(x)) + 1
 
 
-def problem_24():
+def problem_25():
     a = 1
     b = 1
     i = 2
@@ -46,5 +46,5 @@ def problem_24():
 
 if __name__ == "__main__":
     start_time = time.time()
-    problem_24()
+    problem_25()
     print(f"Time: {time.time() - start_time}s")
