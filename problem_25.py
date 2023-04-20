@@ -29,6 +29,9 @@ import time
 
 
 def num_digits(x):
+    """
+    Return the number of digits in int x.
+    """
     return int(math.log10(x)) + 1
 
 
