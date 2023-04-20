@@ -8,18 +8,20 @@ https://projecteuler.net/problem=4
 
 Solution by Sam Sanft
 """
+import time
 
 
 def is_palindrome(x):
-    digits = []
-    i = 0
-    while x / (10 ** i) > 1:
-        digits.append(int(x / (10 ** i) % 10))
-        i += 1
-    for i in range(int(len(digits) / 2)):
-        if digits[i] != digits [-(i + 1)]:
-            return False
-    return True
+    """
+    Returns whether or not x is a palindrome as a boolean.
+    """
+    str_x = str(x)
+    mid = int(len(str_x) / 2)
+    odd = len(str_x) % 2 == 1
+    if odd:
+        return str_x[:mid] == str_x[mid + 1:][::-1]
+    else:
+        return str_x[:mid] == str_x[mid:][::-1]
 
 
 def problem_4():
@@ -27,10 +29,12 @@ def problem_4():
     for i in range(1000):
         for j in range(1000):
             product = i * j
-            if is_palindrome(product):
+            if is_palindrome2(product):
                 palindromes.append(product)
     print(max(palindromes))
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     problem_4()
+    print(f"Time: {time.time() - start_time}s")

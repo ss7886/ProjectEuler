@@ -10,6 +10,7 @@ Solution by Sam Sanft
 
 
 import math
+import time
 
 
 def generate_primes(max_val):
@@ -20,6 +21,7 @@ def generate_primes(max_val):
     primes = [2]
     sqrt_val = math.sqrt(max_val)
     i = 3
+    largest = 3
     while i <= max_val:
         prime = True
         for p in primes_sqrt:
@@ -30,6 +32,7 @@ def generate_primes(max_val):
             if i < sqrt_val:
                 primes_sqrt.append(i)
             primes.append(i)
+            largest = i
         i += 2
     return primes
 
@@ -39,12 +42,16 @@ def problem_3():
     primes = generate_primes(math.sqrt(val))
     factors = []
 
+    champ = -1
+
     for p in primes:
         if val % p == 0:
-            factors.append(p)
+            champ = p
 
-    print(factors[-1])
+    print(champ)
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     problem_3()
+    print(f"Time: {time.time() - start_time}s")
