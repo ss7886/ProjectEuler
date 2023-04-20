@@ -12,6 +12,7 @@ https://projecteuler.net/problem=22
 
 Solution by Sam Sanft
 """
+import time
 
 
 def problem_22():
@@ -36,4 +37,6 @@ def problem_22():
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     problem_22()
+    print(f"Time: {time.time() - start_time}s")

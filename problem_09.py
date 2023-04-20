@@ -12,6 +12,7 @@ https://projecteuler.net/problem=9
 
 Solution by Sam Sanft
 """
+import time
 
 
 def problem_9():
@@ -30,7 +31,7 @@ def problem_9():
             i += 1
 
         if i * (a + b + c) == magic_num:
-            print(f"{i * a} * {i * b} * {i * c} = {a * b * c * (i ** 3)}")
+            print(f"{a * b * c * (i ** 3)}")
             return
         else:
             a += 2
@@ -41,4 +42,6 @@ def problem_9():
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     problem_9()
+    print(f"Time: {time.time() - start_time}s")

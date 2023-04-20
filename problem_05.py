@@ -7,6 +7,7 @@ https://projecteuler.net/problem=5
 
 Solution by Sam Sanft
 """
+import time
 
 
 def get_factorization(x):
@@ -44,4 +45,6 @@ def problem_5():
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     problem_5()
+    print(f"Time: {time.time() - start_time}s")

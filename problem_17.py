@@ -11,6 +11,7 @@ https://projecteuler.net/problem=17
 
 Solution by Sam Sanft
 """
+import time
 
 
 def num_letters(x):
@@ -50,4 +51,6 @@ def problem_17():
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     problem_17()
+    print(f"Time: {time.time() - start_time}s")

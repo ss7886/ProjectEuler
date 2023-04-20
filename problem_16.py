@@ -8,6 +8,7 @@ https://projecteuler.net/problem=16
 Solution by Sam Sanft
 """
 import math
+import time
 
 
 def get_digits(x):
@@ -32,4 +33,6 @@ def problem_16():
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     problem_16()
+    print(f"Time: {time.time() - start_time}s")

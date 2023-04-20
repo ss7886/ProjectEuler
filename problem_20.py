@@ -11,6 +11,7 @@ https://projecteuler.net/problem=20
 Solution by Sam Sanft
 """
 import math
+import time
 
 
 def sum_digits(x):
@@ -33,4 +34,6 @@ def problem_20():
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     problem_20()
+    print(f"Time: {time.time() - start_time}s")

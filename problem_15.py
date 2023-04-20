@@ -8,6 +8,7 @@ https://projecteuler.net/problem=15
 
 Solution by Sam Sanft
 """
+import time
 
 
 def problem_15():
@@ -30,4 +31,6 @@ def problem_15():
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     problem_15()
+    print(f"Time: {time.time() - start_time}s")

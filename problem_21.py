@@ -14,6 +14,7 @@ https://projecteuler.net/problem=21
 Solution by Sam Sanft
 """
 import math
+import time
 
 
 def generate_primes(n, primes=None):
@@ -85,6 +86,7 @@ def problem_21():
     print(sum(amicable.keys()))
 
 
-
 if __name__ == "__main__":
+    start_time = time.time()
     problem_21()
+    print(f"Time: {time.time() - start_time}s")
