@@ -49,7 +49,7 @@ def derivation(n):
     return round(2 / 3 * n ** 3 + 1 / 2 * n ** 2 + 4 / 3 * n - 1.5)
 
 
-def problem_27():
+def problem_28():
     """
     Two different means of calculating the answer are provided. One is a more intuitive implementation that runs in
     linear time. The second relies on a mathematical derivation not provided in the code but runs in constant time.
@@ -62,5 +62,5 @@ def problem_27():
 
 if __name__ == "__main__":
     start_time = time.time()
-    problem_27()
+    problem_28()
     print(f"Time: {time.time() - start_time}s")
